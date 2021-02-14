@@ -49,7 +49,7 @@ const SendMes = (props) => {
             <Container className={classes.cont}>
                 <Button startIcon={<KeyboardArrowLeft />} onClick={props.goBack} />
                 <Input type="text" onChange={(e) => setMes(e.target.value)} />
-                <Button variant="outlined" color="primary" onClick={sendMes}>Send</Button>
+                <Button variant="outlined" style={{backgroundColor:"white"}} color="primary" onClick={sendMes}>Send</Button>
             </Container>
         </div>
     )
