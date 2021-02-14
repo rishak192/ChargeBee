@@ -19,9 +19,10 @@ const useStyles = makeStyles((theme) => ({
     },
     cont2: {
         flex: 1,
+        marginTop: "50px",
         display: "flex",
-        flexDirection: "row",
-        marginTop:"50px"
+        justifyContent: "center",
+        alignItems: "center"
     },
     bottom: {
         display: "flex",
@@ -30,7 +31,9 @@ const useStyles = makeStyles((theme) => ({
     list: {
         display: "flex",
         flexDirection: "row",
-        flexWrap: "wrap"
+        justifyContent: "space-between",
+        alignItems: "center",
+        margin: "2px 0"
     },
     listbox: {
         display: "flex",
@@ -39,6 +42,12 @@ const useStyles = makeStyles((theme) => ({
     },
     li: {
         listStyle: "none"
+    },
+    grid: {
+        [theme.breakpoints.down('sm')]: {
+            display: "flex",
+            flexDirection: "column"
+        }
     }
 }))
 
@@ -47,59 +56,44 @@ const Section3 = () => {
     const classes = useStyles()
 
     return (
-        <Container maxWidth="md" className={classes.cont2}>
-            <Box className={classes.cont1} width={100}>
-                <Box width={1}>
-                    <Typography align="left" variant="h8" style={{ color: "#500ad2", fontSize: "15px" }}>No more spreadsheet errors</Typography>
-                    <Typography align="left" variant="h6" style={{ fontWeight: "bold",marginTop:"10px" }}>Automate Recurring Billing </Typography>
-                    <Box width={4/5} mt={2}>
-                        <Typography style={{ fontSize: "17px" }}>
+            <Grid container xs={12} spacing={4} alignItems="center" className={classes.grid} justify="center" direction="row">
+                <Grid container item xs={5} spacing={1} style={{minWidth:"450px"}}>
+                    <Grid item>
+                        <Typography align="left" variant="h8" style={{ color: "#500ad2", fontSize: "15px" }}>No more spreadsheet errors</Typography>
+                        <Typography align="left" variant="h6" style={{ fontWeight: "bold", marginTop: "10px" }}>Automate Recurring Billing </Typography>
+                        <Typography style={{ marginTop: "10px", fontSize: "17px" }}>
                             Scale your SaaS through 480+ recurring billing scenarios that automate who you bill, when, and how. No humans, no spreadsheets, no missed payments!
                         </Typography>
-                    </Box>
-                </Box>
-                <Box display="flex" flexDirection="column" justifyContent="flex-start" width={1 / 2}>
-                    <Box width={500} mt={5}>
-                        <Grid container item xl={12}>
-                            <Grid item xl={5}>
-                                <ListItem li>
-                                    <ListItemIcon>
-                                        <DoneIcon style={{ color: "green" }} fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Billing Schedules" />
-                                </ListItem>
-                                <ListItem li>
-                                    <ListItemIcon>
-                                        <DoneIcon style={{ color: "green" }} fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Tax management" />
-                                </ListItem>
-                            </Grid>
-                            <Grid item xl={5}>
-                                <ListItem li>
-                                    <ListItemIcon>
-                                        <DoneIcon style={{ color: "green" }} fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Proration & Invoicing" />
-                                </ListItem>
-                                <ListItem li>
-                                    <ListItemIcon>
-                                        < DoneIcon style={{ color: "green" }} fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Payment Methods" />
-                                </ListItem>
-                            </Grid>
+                    </Grid>
+                    <Grid container item xs={12} spacing={1} style={{ marginTop: "40px" }}>
+                        <Grid item xs={6}>
+                            <Box className={classes.list}>
+                                <DoneIcon style={{ color: "green" }} fontSize="small" />
+                                <ListItemText primary="Billing Schedules" />
+                            </Box>
+                            <Box className={classes.list}>
+                                <DoneIcon style={{ color: "green" }} fontSize="small" />
+                                <ListItemText primary="Tax management" />
+                            </Box>
                         </Grid>
-                    </Box>
-                    <Box mt={3} width={75/100}>
-                        <LearnButton border="1px solid #000ff0" bradius="3px"/>
-                    </Box>
-                </Box>
-            </Box>
-            <Box width={1 / 2}>
-                <img alt="Give marketing automation a boost" class="img-responsive fancy" src="https://webstatic.chargebee.com/assets/web/352/images/home/lemon/recurring-billing-graphic.svg"></img>
-            </Box>
-        </Container>
+                        <Grid item xs={6}>
+                            <Box className={classes.list}>
+                                <DoneIcon style={{ color: "green" }} fontSize="small" />
+                                <ListItemText primary="Proration & Invoicing" />
+                            </Box>
+                            <Box className={classes.list}>
+                                < DoneIcon style={{ color: "green" }} fontSize="small" />
+                                <ListItemText primary="Payment Methods" />
+                            </Box>
+                        </Grid>
+                    </Grid>
+                    <LearnButton border="1px solid #000ff0" bradius="3px" />
+                </Grid>
+
+                <Grid item xs={5} >
+                    <img height="100%" width="100%" alt="Give marketing automation a boost" class="img-responsive fancy" src="https://webstatic.chargebee.com/assets/web/352/images/home/lemon/recurring-billing-graphic.svg"></img>
+                </Grid>
+            </Grid>
     )
 }
 

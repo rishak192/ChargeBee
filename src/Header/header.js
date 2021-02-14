@@ -23,12 +23,12 @@ import GoogleLogin from 'react-google-login'
 const useStyles = makeStyles((theme, props) => ({
     menuButton: {
         display: "none",
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             display: "block",
         }
     },
     title: {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             width: "100%"
         }
     },
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme, props) => ({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             display: "none",
         }
     },

@@ -34,6 +34,7 @@ const LearnButton = (props) => {
                 borderRadius:props.bradius,
                 height:"40px",
                 width:"130px",
+                marginTop:"20px"
             }}>
             <Typography style={{fontSize:"13px"}}>
                 Learn More    

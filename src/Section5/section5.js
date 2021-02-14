@@ -18,9 +18,10 @@ const useStyles = makeStyles((theme) => ({
     },
     cont2: {
         flex: 1,
-        display: "flex",
-        flexDirection: "row",
-        marginTop:"200px"
+        marginTop: "200px",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center"
     },
     bottom: {
         display: "flex",
@@ -38,67 +39,57 @@ const useStyles = makeStyles((theme) => ({
     },
     li: {
         listStyle: "none"
+    },
+    grid: {
+        marginTop:"200px",
+        [theme.breakpoints.down('md')]: {
+            display: "flex",
+            flexDirection: "column"
+        }
     }
 }))
 
-const Section5=()=>{
+const Section5 = () => {
 
-    const classes=useStyles()
+    const classes = useStyles()
 
     return (
-        <Container maxWidth="md" className={classes.cont2}>
-            <Box className={classes.cont1} width={100}>
-                <Box width={1}>
-                    <Typography align="left" variant="h8" style={{ color: "#500ad2", fontSize: "15px" }}>No more lost opportunities</Typography>
-                    <Typography align="left" variant="h6" style={{ fontWeight: "bold",marginTop:"10px" }}>Streamline Revenue Operations </Typography>
-                    <Box width={4/5} mt={2}>
-                        <Typography style={{ fontSize: "17px" }}>
-                        Plug revenue leaks by aligning GTM & Finance. Uncover growth opportunities across processes, geographies, and business models. 
-                        </Typography>
-                    </Box>
-                </Box>
-                <Box display="flex" flexDirection="column" justifyContent="flex-start" width={1 / 2}>
-                    <Box width={500} mt={5}>
-                        <Grid container item xl={12}>
-                            <Grid item xl={5}>
-                                <ListItem li>
-                                    <ListItemIcon>
-                                        <DoneIcon style={{ color: "green" }} fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="SaaS Analytics" />
-                                </ListItem>
-                                <ListItem li>
-                                    <ListItemIcon>
-                                        <DoneIcon style={{ color: "green" }} fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Order-to-revenue" />
-                                </ListItem>
-                            </Grid>
-                            <Grid item xl={5}>
-                                <ListItem li>
-                                    <ListItemIcon>
-                                        <DoneIcon style={{ color: "green" }} fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Quote-to-cash" />
-                                </ListItem>
-                                <ListItem li>
-                                    <ListItemIcon>
-                                        < DoneIcon style={{ color: "green" }} fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Revenue Recognition" />
-                                </ListItem>
-                            </Grid>
+            <Grid container xs={12} spacing={4} alignItems="center" className={classes.grid} justify="center" direction="row">
+                <Grid container item xs={5} spacing={1} style={{minWidth:"450px"}}>
+                    <Grid item xs={12} direction="row" alignItems="flex-end">
+                        <Typography align="left" variant="h8" style={{ color: "#500ad2", fontSize: "15px" }}>No more developer dependency</Typography>
+                        <Typography align="left" variant="h6" style={{ fontWeight: "bold", marginTop: "20px" }}>Smarter Subscription Management </Typography>
+                        <Typography style={{ marginTop: "10px", fontSize: "17px" }}>
+                            Plug revenue leaks by aligning GTM & Finance. Uncover growth opportunities across processes, geographies, and business models.
+                            </Typography>
+                    </Grid>
+                    <Grid container item xs={12} spacing={1} style={{ marginTop: "40px" }}>
+                        <Grid item xs={6}>
+                            <Box className={classes.list}>
+                                <DoneIcon style={{ color: "green" }} fontSize="small" />
+                                <ListItemText primary="SaaS Analytics" />
+                            </Box>
+                            <Box className={classes.list}>
+                                <DoneIcon style={{ color: "green" }} fontSize="small" />
+                                <ListItemText primary="Order-to-revenue" />
+                            </Box>
                         </Grid>
-                    </Box>
-                    <Box mt={3}>
-                        <LearnButton border="1px solid #000ff0" bradius="3px"/>
-                    </Box>
-                </Box>
-            </Box>
-            <Box width={1 / 2}>
-            <img alt="Give marketing automation a boost" class="img-responsive fancy" src="https://webstatic.chargebee.com/assets/web/352/images/home/lemon/revenue-operations-graphic.svg"></img>
-            </Box>
-        </Container>
+                        <Grid item xs={6}>
+                            <Box className={classes.list}>
+                                <DoneIcon style={{ color: "green" }} fontSize="small" />
+                                <ListItemText primary="Quote-to-cash" />
+                            </Box>
+                            <Box className={classes.list}>
+                                < DoneIcon style={{ color: "green" }} fontSize="small" />
+                                <ListItemText primary="Revenue Recognition" />
+                            </Box>
+                        </Grid>
+                    </Grid>
+                    <LearnButton border="1px solid #000ff0" bradius="3px" />
+                </Grid>
+                <Grid item xs={5} >
+                    <img height="100%" width="100%" alt="Give marketing automation a boost" class="img-responsive fancy" src="https://webstatic.chargebee.com/assets/web/352/images/home/lemon/revenue-operations-graphic.svg"></img>                </Grid>
+            </Grid>
     )
 }
 
