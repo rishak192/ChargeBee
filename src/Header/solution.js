@@ -5,9 +5,6 @@ import CusGridHead from '../Grid/gridhead'
 
 const useStyle = makeStyles(theme => ({
     product: {
-        position: "absolute",
-        top: "50px",
-        left: "0",
         background: "linear-gradient(180deg,#ecf3f7 0,#fff 99.92%)",
         backgroundRepeat: "no-repeat",
         paddingBottom:"30px",

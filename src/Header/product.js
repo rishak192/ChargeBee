@@ -5,14 +5,11 @@ import CusGridHead from '../Grid/gridhead'
 
 const useStyle = makeStyles(theme => ({
     product: {
-        position: "absolute",
-        top: "50px",
-        left: "0",
         background: "linear-gradient(180deg,#ecf3f7 0,#fff 99.92%)",
         backgroundRepeat: "no-repeat",
-        paddingBottom:"30px",
-        paddingTop:"30px",
-        boxShadow:"0px 200px 200px 100px gray"
+        paddingBottom: "30px",
+        paddingTop: "30px",
+        boxShadow: "0px 200px 200px 100px gray",
     }
 }))
 
@@ -21,22 +18,20 @@ const Product = () => {
     const classes = useStyle()
 
     return (
-        <Box className={classes.product}>
+        <Box className={classes.product} style={{opacity:1}}>
             <Grid container sm={12} justify="space-around">
-                <Grid container sm={2}>
-                    <Grid container item spacing={2}>
-                        <CusGridHead text="Subscription Management" />
-                        <Grid container item spacing={1}>
-                            <CusGrid text="Overview" />
-                            <CusGrid text="Create & Manage Plans" />
-                            <CusGrid text="Pricing Management" />
-                            <CusGrid text="Handle Trial Subscriptions" />
-                            <CusGrid text="Customer Self-service Portal" />
-                            <CusGrid text="Mobile Solutions" />
-                        </Grid>
+                <Grid container item sm={2}>
+                    <CusGridHead text="Subscription Management" />
+                    <Grid container item spacing={1}>
+                        <CusGrid text="Overview" />
+                        <CusGrid text="Create & Manage Plans" />
+                        <CusGrid text="Pricing Management" />
+                        <CusGrid text="Handle Trial Subscriptions" />
+                        <CusGrid text="Customer Self-service Portal" />
+                        <CusGrid text="Mobile Solutions" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
+                <Grid container item sm={2}>
                     <CusGridHead text="Billing Automation" />
                     <Grid container item spacing={1}>
                         <CusGrid text="Overview" />

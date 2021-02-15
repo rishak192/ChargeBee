@@ -3,7 +3,7 @@ import React from 'react'
 
 const CusGridHead = (props) => {
     return (
-        <Grid container item style={{ color: "black" }}>
+        <Grid item style={{ color: "black" }}>
             {props.text}
         </Grid>
     )

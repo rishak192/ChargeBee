@@ -109,8 +109,14 @@ const useStyles = makeStyles((theme, props) => ({
         border: "1px solid blue",
         padding: "4px",
         boxShadow: "0 0 5px 5px rgba(0,0,0,0.3)"
+    },
+    sol: {
+        position: "absolute",
+        top: "70px",
+        left: "0",
+        transition: "opacity 1s ease-out",
+        opacity: 0
     }
-
 }));
 
 const HideOnScroll = (props) => {
@@ -142,9 +148,11 @@ const Header = (props) => {
     const classes = useStyles(props);
 
     const [Arrow, setArrow] = useState(false);
-    const [Prod, setProd] = useState(false)
     const [Sol, setSol] = useState(false)
+    const [osol,setOsol]=useState(false)
     const [Res, setRes] = useState(false)
+    const [Prod, setProd] = useState(false)
+    const [opro,setOpro]=useState(false)
 
     const [Pos, setPos] = useState(0)
 
@@ -206,25 +214,30 @@ const Header = (props) => {
                             <Box>
                                 <Link href="#" underline="none"
                                     onMouseEnter={() => { setProd(true) }}
-                                    onMouseLeave={() => { setProd(false) }}>
+                                    onMouseLeave={()=>{opro?setProd(true):setTimeout(()=>setProd(false),200)}}>
                                     <Typography variant="h12" className={classes.linkMargin}>
                                         Product
                                     </Typography>
                                 </Link>
-                                {Prod ? <Product /> : null}
+                                <div onMouseEnter={()=>{if(Prod) {setOpro(true)}}} onMouseLeave={()=>{setOpro(false);setPos(false)}} className={classes.sol} style={{zIndex: (Prod || opro) ? 1 : -1, opacity: (Prod || opro) ? 1 : 0 }}>
+                                    <Product />
+                                </div>
                                 <Link href="#" underline="none">
                                     <Typography variant="h12" className={classes.linkMargin}>
                                         Pricing
                                     </Typography>
                                 </Link>
                                 <Link href="#" underline="none"
-                                    onMouseEnter={() => { setSol(true) }}
-                                    onMouseLeave={() => { setSol(false) }}>
+                                    onMouseEnter={() =>  {setSol(true)} }
+                                    onMouseLeave={()=>{osol?setSol(true):setTimeout(()=>setSol(false),200)}}
+                                    >
                                     <Typography variant="h12" className={classes.linkMargin}>
                                         Solutions
                                     </Typography>
                                 </Link>
-                                {Sol ? <Solutions /> : null}
+                                <div onMouseEnter={()=>{if(Sol){setOsol(true)}}} onMouseLeave={()=>{setOsol(false);setSol(false)}} className={classes.sol} style={{zIndex: (Sol || osol) ? 1 : -1, opacity: (Sol || osol) ? 1 : 0 }}>
+                                    <Solutions />
+                                </div>
                                 <Link href="#" underline="none">
                                     <Typography variant="h12" className={classes.linkMargin}>
                                         Customers
