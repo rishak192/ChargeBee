@@ -18,11 +18,11 @@ const Product = () => {
     const classes = useStyle()
 
     return (
-        <Box className={classes.product} style={{opacity:1}}>
+        <Box className={classes.product}>
             <Grid container sm={12} justify="space-around">
-                <Grid container item sm={2}>
-                    <CusGridHead text="Subscription Management" />
-                    <Grid container item spacing={1}>
+                <Grid container item sm={2} direction="column">
+                    <Grid container item spacing={2}>
+                        <CusGridHead text="Subscription Management" />
                         <CusGrid text="Overview" />
                         <CusGrid text="Create & Manage Plans" />
                         <CusGrid text="Pricing Management" />
@@ -31,9 +31,9 @@ const Product = () => {
                         <CusGrid text="Mobile Solutions" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2}>
-                    <CusGridHead text="Billing Automation" />
-                    <Grid container item spacing={1}>
+                <Grid container item sm={2} direction="column">
+                    <Grid container item spacing={2}>
+                        <CusGridHead text="Billing Automation" />
                         <CusGrid text="Overview" />
                         <CusGrid text="Usage Based Billing" />
                         <CusGrid text="Invoicing Automation" />
@@ -41,9 +41,9 @@ const Product = () => {
                         <CusGrid text="Proration" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
-                    <CusGridHead text="Recurring Payments" />
-                    <Grid container item spacing={1}>
+                <Grid container item sm={2} spacing={2} direction="column">
+                    <Grid container item spacing={2}>
+                        <CusGridHead text="Recurring Payments" />
                         <CusGrid text="Overview" />
                         <CusGrid text="Multiple Payment Methods" />
                         <CusGrid text="Multiple Payment Gateways" />
@@ -52,18 +52,18 @@ const Product = () => {
                         <CusGrid text="Chargeback Management" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
-                    <CusGridHead text="Accounting & Taxes" />
-                    <Grid container item spacing={1}>
+                <Grid container item sm={2} spacing={2} direction="column">
+                    <Grid container item spacing={2}>
+                        <CusGridHead text="Accounting & Taxes" />
                         <CusGrid text="Overview" />
                         <CusGrid text="Revenue Recognition" />
                         <CusGrid text="Manage Sales Tax" />
                         <CusGrid text="One-Click Reconciliation" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
-                    <CusGridHead text="Reporting & Analytics" />
-                    <Grid container item spacing={1}>
+                <Grid container item sm={2} spacing={2} direction="column">
+                    <Grid container item spacing={2}>
+                        <CusGridHead text="Reporting & Analytics" />
                         <CusGrid text="Overview" />
                         <CusGrid text="Deferred Revenue Reporting" />
                     </Grid>

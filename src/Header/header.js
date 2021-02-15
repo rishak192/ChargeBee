@@ -114,7 +114,7 @@ const useStyles = makeStyles((theme, props) => ({
         position: "absolute",
         top: "70px",
         left: "0",
-        transition: "opacity 1s ease-out",
+        transition: "all 1s",
         opacity: 0
     }
 }));
@@ -219,7 +219,7 @@ const Header = (props) => {
                                         Product
                                     </Typography>
                                 </Link>
-                                <div onMouseEnter={()=>{if(Prod) {setOpro(true)}}} onMouseLeave={()=>{setOpro(false);setPos(false)}} className={classes.sol} style={{zIndex: (Prod || opro) ? 1 : -1, opacity: (Prod || opro) ? 1 : 0 }}>
+                                <div onMouseEnter={()=>{if(Prod) {setOpro(true)}}} onMouseLeave={()=>{setOpro(false);setPos(false)}} className={classes.sol} style={{marginLeft: (Prod || opro) ? "0" : "-20px" ,zIndex: (Prod || opro) ? 1 : -1, opacity: (Prod || opro) ? 1 : 0 }}>
                                     <Product />
                                 </div>
                                 <Link href="#" underline="none">
@@ -235,7 +235,7 @@ const Header = (props) => {
                                         Solutions
                                     </Typography>
                                 </Link>
-                                <div onMouseEnter={()=>{if(Sol){setOsol(true)}}} onMouseLeave={()=>{setOsol(false);setSol(false)}} className={classes.sol} style={{zIndex: (Sol || osol) ? 1 : -1, opacity: (Sol || osol) ? 1 : 0 }}>
+                                <div onMouseEnter={()=>{if(Sol){setOsol(true)}}} onMouseLeave={()=>{setOsol(false);setSol(false)}} className={classes.sol} style={{marginLeft: (Sol || osol) ? "0" : "-30px" ,zIndex: (Sol || osol) ? 1 : -1, opacity: (Sol || osol) ? 1 : 0 }}>
                                     <Solutions />
                                 </div>
                                 <Link href="#" underline="none">

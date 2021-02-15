@@ -20,7 +20,7 @@ const Solutions = () => {
     return (
         <Box className={classes.product}>
             <Grid container sm={12} justify="space-around">
-                <Grid container item sm={2} spacing={2}>
+                <Grid container item sm={2} spacing={1} direction="column">
                     <CusGridHead text="By Role" />
                     <Grid container item spacing={1}>
                         <CusGrid text="Finance" />
@@ -28,7 +28,7 @@ const Solutions = () => {
                         <CusGrid text="RevOps" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
+                <Grid container item sm={2} spacing={1} direction="column">
                     <CusGridHead text="By Industry" />
                     <Grid container item spacing={1}>
                         <CusGrid text="B2B SaaS" />
@@ -37,7 +37,7 @@ const Solutions = () => {
                         <CusGrid text="Publishing" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
+                <Grid container item sm={2} spacing={1} direction="column">
                     <CusGridHead text="By Strategy" />
                     <Grid container item spacing={1}>
                         <CusGrid text="Roll Out New" />
@@ -47,7 +47,7 @@ const Solutions = () => {
                         <CusGrid text="Shift to Subscriptions" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
+                <Grid container item sm={2} spacing={1} direction="column">
                     <CusGridHead text="By Business Size" />
                     <Grid container item spacing={1}>
                         <CusGrid text="Startup" />
@@ -55,14 +55,14 @@ const Solutions = () => {
                         <CusGrid text="Enterprise" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
+                <Grid container item sm={2} spacing={1} direction="column">
                     <CusGridHead text="By Business Model " />
                     <Grid container item spacing={1}>
                         <CusGrid text="Self-serve" />
                         <CusGrid text="Sales-driven" />
                     </Grid>
                 </Grid>
-                <Grid container item sm={2} spacing={2}>
+                <Grid container item sm={2} spacing={1} direction="column">
                     <CusGridHead text="By Geography" />
                     <Grid container item spacing={1}>
                         <CusGrid text="Europe" />
