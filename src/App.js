@@ -11,6 +11,7 @@ import Section4 from './Section4/section4';
 import Section5 from './Section5/section5';
 import Section6 from './Section6/section6';
 import SendMes from './sendmes';
+import SwipeableTextMobileStepper from './Section6/swipe';
 
 const App = () => {
 

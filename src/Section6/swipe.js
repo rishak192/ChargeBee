@@ -9,7 +9,7 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { ArrowBack, ArrowForward } from '@material-ui/icons';
-import { Box } from '@material-ui/core';
+import { Box, Container, Grid } from '@material-ui/core';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -39,7 +39,7 @@ const cur = [
   {
     label: 'Grew MRR by',
     desc: 'and expanded globally from Europe.',
-    bacimg: 'linear-gradient(180deg,#438b8b 0,#124e4e 100%)',
+    bacimg: 'linear-gradient(180deg,#f2a720 0,#bc7e0f 100%)',
     content: '“As a European company selling in Europe but also outside of Europe, it was critical for us to be able to have two currencies - euros and dollars. VAT was another aspect we really wanted to be automated. This was a gamechanger with Chargebee. ”',
     name: 'Valentin Huang',
     prof: 'Co-founder',
@@ -68,6 +68,15 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     width: '100%',
   },
+  button:{
+    height:"60px",
+    width:"50px",
+    position:"absolute",
+    backgroundColor:"white",
+    borderRadius:"50%",
+    marginTop:"-210px",
+    boxShadow:"0 0 10px 1px gray"
+  }
 }));
 
 function SwipeableTextMobileStepper() {
@@ -89,67 +98,64 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box display="flex" justifyContent="center" alignItems="center">
-      <Box width={1 / 2}>
-        <Box  height="100%" width={1} style={{ border: "1px solid red" }}>
-          <Box display="flex" flexDirection="row">
-            <Box backgroundColor={cur[activeStep].bacimg}>
-              <Box>
-                <Box>
-                  <Typography>{cur[activeStep].label}</Typography>
-                </Box>
-                <Box>
-                  <img src={cur[activeStep].imgPath} />
-                </Box>
-                <Box>
-                  <Typography>{cur[activeStep].desc}</Typography>
-                </Box>
-              </Box>
-              <Box width={1} display="flex" flexDirection="row">
-                <Box width={1 / 4} display="flex" alignItems="center" justifyContent="center" style={{ border: "1px solid white" }}>
-                  <Box width={1} height={0} style={{ border: "1px solid white" }} />
-                </Box>
-                <Box width={1 / 2}>
-                  <Button variant="outlined" style={{ borderColor: "white", color: "white" }} endIcon={<ArrowForward />}>Read Story</Button>
-                </Box>
-              </Box>
+    <Container maxWidth="lg">
+      <Grid container justify="center" xs={12}>
+        <Grid item xs={4} style={{borderTopLeftRadius:"20px",borderBottomLeftRadius:"20px", borderTopRightRadius:"50px",borderBottomRightRadius:"50px", backgroundImage: cur[activeStep].bacimg }}>
+          <Box m={5}>
+            <Box>
+              <Typography style={{fontSize:"15px",color:"white",padding:"5px 0"}}>{cur[activeStep].label}</Typography>
             </Box>
-            <Box width={3/4} style={{ backgroundColor: "white" }} display="flex" flexDirection="column" justifyContent="space-between">
-              <Box display="flex" flexDirection="column">
-                <Box>
-                  <Typography>
-                    {cur[activeStep].content}
-                  </Typography>
-                </Box>
-              </Box>
-              <Box style={{border:"1px solid red"}} width={1} display="flex" flexDirection="row" justifyContent="space-between">
-                <Box>
-                  <Box>
-                    <Typography>
-                      {cur[activeStep].name}
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography>
-                      {cur[activeStep].prof}
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box display="flex" justifyContent="center" alignItems="center">
-                  <img height="25px" width="auto" src={cur[activeStep].botimg} />
-                </Box>
-              </Box>
+            <Box>
+              <img src={cur[activeStep].imgPath} />
+            </Box>
+            <Box>
+              <Typography style={{fontSize:"20px",color:"white",padding:"10px 0"}}>{cur[activeStep].desc}</Typography>
             </Box>
           </Box>
-        </Box>
-        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-          {theme.direction === 'rtl' ? <ArrowForward /> : <ArrowBack />}
-        </Button>
-        <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-          {theme.direction === 'rtl' ? <ArrowBack /> : <ArrowForward />}
-        </Button>
-      </Box>
-    </Box>
+          <Box width={1} m={5} mb={20} display="flex" flexDirection="row">
+            <Box width={1 / 4} display="flex" alignItems="center" justifyContent="center">
+              <Box mr={2} width={1} height={0} style={{border:"1px solid white"}}/>
+            </Box>
+            <Box width={1 / 2}>
+              <Button variant="outlined" style={{ borderColor: "white", color: "white" }} endIcon={<ArrowForward />}>Read Story</Button>
+            </Box>
+          </Box>
+        </Grid>
+
+        <Grid container item xs={6} direction="column" alignItems="center" justify="space-between" style={{ backgroundColor: "white"}}>
+          <Grid item >
+            <Box>
+              <Typography style={{fontSize:"25px",padding:"50px"}}>
+                {cur[activeStep].content}
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid container item direction="row" alignItems="center" justify="space-between">
+            <Grid item>
+              <Box>
+                <Typography style={{marginLeft:"50px", fontSize:"25px",fontWeight:"bold"}}>
+                  {cur[activeStep].name}
+                </Typography>
+              </Box>
+              <Box>
+                <Typography style={{marginLeft:"50px", fontSize:"20px"}}>
+                  {cur[activeStep].prof}
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item>
+              <img height="50px" width="200px" src={cur[activeStep].botimg} />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Button className={classes.button} style={{marginLeft:"60px"}} onClick={handleBack} disabled={activeStep === 0}>
+        {theme.direction === 'rtl' ? <ArrowForward /> : <ArrowBack />}
+      </Button>
+      <Button className={classes.button} style={{right:"125px"}} size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+        {theme.direction === 'rtl' ? <ArrowBack color=""/> : <ArrowForward />}
+      </Button>
+    </Container>
   );
 }
 

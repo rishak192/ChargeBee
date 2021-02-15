@@ -4,6 +4,7 @@ import React from 'react'
 import AllButton from '../Button/button'
 import Button1 from '../Button/button1'
 import LearnButton from '../Button/learnmore'
+import SwipeableTextMobileStepper from './swipe'
 import LabTabs from './swipe'
 
 const useStyles = makeStyles(theme => ({
@@ -220,6 +221,7 @@ const Section6 = () => {
             </Box>
             <Box mt={1} className={classes.tbotro} height="10px"></Box>
             <Box mt={4} className={classes.botrot} height="10px"></Box>
+            <SwipeableTextMobileStepper/>
         </Box>
     )
 }

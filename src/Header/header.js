@@ -167,21 +167,23 @@ const Header = (props) => {
 
     const response = (res) => {
         console.log(res.profileObj);
-        var user=res.profileObj
-        fetch('https://chargebeeback.herokuapp.com/saveUser', {
-            method: 'post',
-            body: JSON.stringify({
-                "email":user.email,
-                "name":user.name,
-            }),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json())
-            .then(res => {
-                console.log(res);
-            })
+        var user = res.profileObj
+        if (user !== undefined) {
+            fetch('https://chargebeeback.herokuapp.com/saveUser', {
+                method: 'post',
+                body: JSON.stringify({
+                    "email": user.email,
+                    "name": user.name,
+                }),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+                .then(res => {
+                    console.log(res);
+                })
+        }
     }
 
     return (

@@ -10,7 +10,7 @@ import AllButton from '../Button/button';
 
 const useStyles = makeStyles(theme => ({
     mc: {
-        marginTop: 500,
+        marginTop: 800,
         marginBottom: 100
     },
     griditem: {
